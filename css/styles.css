@@ -1330,19 +1330,37 @@ span.time-cmt {
         width: 100%;
         padding: 10px;
     }
-    
     .nav-item:before {
         display: none;
     }
-    
     .nav-item {
-        padding: 0;
+        padding: 0 30px 0 47px;
         width: 100%;
+        border-bottom: 1px solid #1c609c;
+    }
+
+    .nav-menu {
+        background: #0c5291;
+    }
+    
+    .nav-item a {
+        width: 100%;
+    }
+    
+    .nav-item:after {
+        content: "\f111";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 900;
+        position: absolute;
+        color: #7abbf5;
+        top: 13px;
+        left: 16px;
+        font-size: 6px;
     }
     
     .menu-right {
         width: 100%;
-        padding: 10px;
+        padding: 0;
         display: none;
     }
     
