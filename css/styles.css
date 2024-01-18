@@ -11,6 +11,10 @@
 }
 a {
     text-decoration: none;
+    cursor: pointer;
+}
+p {
+    color: #454545;
 }
 ul, ol {
     list-style-type: none;
@@ -425,7 +429,10 @@ section.content-layout {
 .sidebar {
     width: 25%;
     display: inline-flex;
-    position: relative;
+    align-self: flex-start;
+     /* for Safari */
+    position: sticky;
+    top: 0;
 }
 
 .sidebar-inner {
@@ -615,31 +622,39 @@ section.content-layout {
 }
 
 .post-thumbnail {
-    width: 220px;
+    width: 225px;
     display: inline-flex;
+    height: 175px;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .post-thumbnail img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
 }
-
+.content-block:hover .post-thumbnail img {
+    transform: scale(1.1);
+}
 .post-thumbnail a {
     display: flex;
 }
 
 .post-content {
-    width: calc(100% - 220px);
+    width: calc(100% - 225px);
     padding: 0 15px;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     position: relative;
     justify-content: space-between;
     align-items: flex-start;
-    height: 100%;
+    height: 175px;
 }
 
 .title-post a, .title-post-content {
-    font-size: 22px;
+    font-size: 18px;
     font-family: 'Chakra Petch';
     color: #0f62ac;
     display: block;
@@ -654,11 +669,26 @@ section.content-layout {
     justify-content: space-between;
     align-items: center;
     color: #85878b;
+    margin-top: 10px;
+}
+.meta-comments {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.meta-comments img {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-right: 5px;
+    /* box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15); */
 }
 
 .title-post {
     display: block;
-    margin-bottom: 15px;
+    cursor: pointer;
 }
 .meta-cate {
     position: relative;
@@ -667,6 +697,7 @@ section.content-layout {
     color: #85878b;
     font-weight: 500;
     text-transform: capitalize;
+    cursor: pointer;
 }
 
 .meta-cate:after {
@@ -687,7 +718,9 @@ section.content-layout {
 .meta-created {
     font-style: italic;
 }
-
+.text-grey-2 {
+    color: #7d7d7d;
+}
 .meta-comments i {
     color: #0f62ac;
     font-size: 17px;
@@ -729,6 +762,9 @@ section.content-layout {
 .widget-box {
     position: relative;
     padding: 10px 0px;
+}
+.widget-box:first-child {
+    padding-top: 0px;
 }
 .tip-item {
     display: inline-flex;
@@ -784,24 +820,31 @@ section.content-layout {
 
 .post-title-sm {
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .post-title-sm a {
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1.3;
-    color: #4b4b4b;
+    color: #2f2f2f;
     display: block;
+    font-weight: 600;
 }
 
 .post-thumb {
     width: 100%;
     position: relative;
     margin-bottom: 5px;
+    overflow: hidden;
 }
 
 .post-thumb img {
     width: 100%;
+    transition: .5s;
+}
+.widget-post-sm:hover .post-thumb img,
+.related-post-item:hover .post-thumb img {
+    transform: scale(1.1);
 }
 .col-9 {
     width: 75%;
@@ -887,8 +930,10 @@ section.content-layout {
 
 .meta-post-content-lits li:first-child span {
     font-weight: 400;
-    color: #5ccafb;
+    color: #0f62ac;
     font-style: normal;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .meta-post-content-lits li:after {
@@ -916,7 +961,7 @@ section.content-layout {
     margin-bottom: 1rem;
 }
 .post-content-block p {
-    color: #aeaeae;
+    color: #454545;
     margin-bottom: 15px;
 }
 
@@ -1013,12 +1058,12 @@ section.content-layout {
 }
 
 .post-title a {
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Chakra Petch';
     color: #1e78ce;
     display: block;
-    margin-bottom: 15px;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 .text-blue-2 {
     color: #1e78ce;
@@ -1267,7 +1312,22 @@ span.time-cmt {
 .slick-slide img {
     width: 100%;
 }
-
+.author-avt {
+    width: 25px !important;
+    height: 25px;
+    border-radius: 25px;
+    object-fit: cover;
+}
+.align-center {
+    align-items: center;
+}
+.text-grey-3 {
+    color: #85878b;
+}
+.author-name {
+    margin-left: 10px;
+    font-size: 13px;
+}
 @media screen and (max-width: 600px) {
     
     .wrapper {
@@ -1447,9 +1507,3 @@ span.time-cmt {
     }
 
 }
-
-    
-    
-    
-    
-    
