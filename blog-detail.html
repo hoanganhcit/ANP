@@ -716,9 +716,8 @@
             });
 
             $(window).resize(function() {
-                var width = $(window).width();
-                if (width < 600){
-                    $('.icon-categories').click(function(){
+                if (window.matchMedia('(max-width: 600px)').matches) {
+                    $('.icon-categories').click(function() {
                         $('.menu-right').slideToggle();
                     });
                 }
