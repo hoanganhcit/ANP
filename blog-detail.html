@@ -697,16 +697,6 @@
                 $('.fav-cmt').removeClass('like');
                 $(this).toggleClass('like');
             });
-            // $('.item-parent .sidebar-link').click(function(){
-            //     $('.sidebar-menu-droppdown').slideUp();
-            //     $('.item-parent').removeClass('active');
-            //     $(this).parent().toggleClass('active');
-            //     if ($('.item-parent').hasClass('active')) {
-            //         $(this).parent().find('.sidebar-menu-droppdown').slideDown();
-            //     } else {
-            //         $(this).parent().find('.sidebar-menu-droppdown').slideUp();
-            //     }
-            // });
             $('.item-parent .sidebar-link').click(function () {
                 var $ul = $(this).siblings('ul');
                 if ($ul.length > 0) {
