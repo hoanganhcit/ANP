@@ -172,7 +172,6 @@ header {
 
 .form-input {
     width: 100%;
-    max-width: 400px;
     height: 40px;
     border: 1px solid #0f62ac;
     border-radius: 5px;
@@ -463,7 +462,7 @@ section.content-layout {
     color: #43454b;
     position: relative;
 }
-.sidebar-link:after {
+.item-parent .sidebar-link:after {
     content: "\f107";
     font-family: "Font Awesome 5 Pro";
     font-weight: 300;
@@ -474,6 +473,29 @@ section.content-layout {
     font-size: 20px;
     line-height: 40px;
     text-align: center;
+}
+.sidebar-menu-droppdown {
+    position: relative;
+    display: none;
+}
+
+.item-parent .sidebar-menu-droppdown .sidebar-link::after {
+    display: none;
+}
+
+.sidebar-menu-droppdown .sidebar-link {
+    padding: 10px;
+    background: #f9f9f9;
+    transition: .3s;
+}
+
+.sidebar-menu-droppdown .sidebar-item:first-child .sidebar-link {
+    border-top: 0;
+}
+
+.sidebar-menu-droppdown .sidebar-link:hover {
+    background: #f1f1f1;
+    padding-left: 20px;
 }
 .icon-link {
     display: inline-flex;
@@ -787,7 +809,7 @@ section.content-layout {
 .col-7 {
     width: 66%
 }
-.post-content-block {
+.post-content-block, .comments-block {
     position: relative;
     border: 1px solid #dededf;
     border-radius: 10px;
@@ -968,4 +990,270 @@ section.content-layout {
 .keywords {
     display: block;
     margin: 15px 0 15px;
+}
+.related-posts {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.col-3 {
+    width: 25%;
+    padding: 0 10px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.post-title a {
+    font-size: 20px;
+    font-family: 'Chakra Petch';
+    color: #1e78ce;
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.text-blue-2 {
+    color: #1e78ce;
+}
+.comments-form {
+    position: relative;
+}
+
+.form-control {
+    width: 100%;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 15px;
+    border-radius: 10px;
+    display: block;
+}
+
+.comments-form textarea.form-control {
+    resize: none;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Chakra Petch';
+    display: block;
+}
+
+.comments-form textarea.form-control::placeholder {
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'Chakra Petch';
+    color: #1e78ce;
+}
+
+.upload-file-cmt {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+
+.file-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+}
+
+.upload-file-cmt .fal {
+    font-size: 20px;
+    margin-right: 5px;
+    display: inline-flex;
+}
+.gender-radio {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.radio_anp {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.radio_anp [type=radio]:checked,
+.radio_anp [type=radio]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+.radio_anp [type=radio]:checked + label,
+.radio_anp [type=radio]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666666;
+}
+.radio_anp [type=radio]:checked + label:before,
+.radio_anp [type=radio]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #999999;
+  border-radius: 50%;
+  background: #fff;
+}
+.radio_anp [type=radio]:checked + label:after,
+.radio_anp [type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #1e78ce;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.radio_anp [type=radio]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.radio_anp [type=radio]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.d-grid {
+    display: grid;
+}
+
+.gap-5 {
+    grid-gap: 10px;
+}
+
+.colume-2 {
+    grid-template-columns: repeat(2,minmax(100px,1fr));
+}
+
+.input-group-1 {
+    position: relative;
+}
+
+.input-group-1 .form-input {
+    width: 100%;
+    border-color: #e5e5e5;
+    height: 50px;
+    padding-top: 25px;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-bottom: 6px;
+}
+
+.input-group-1 label {
+    position: absolute;
+    color: #617483;
+    top: 6px;
+    left: 15px;
+    font-weight: 500;
+}
+
+.button-submit {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #1e78ce;
+    border-radius: 10px;
+    background: #1e78ce;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+    cursor: pointer;
+}
+.text-danger {
+    color: #ff2e17;
+}
+.comments-lists {
+    position: relative;
+}
+
+.comment-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.cmt-content {
+    display: block;
+}
+
+.cmt-name {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.cmt-desc {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.cmt-actions {
+    display: flex;
+    align-items: center;
+}
+
+.cmt-actions a {
+    color: #000;
+    margin-right: 15px;
+}
+
+span.time-cmt {
+    color: #9E9E9E;
+}
+.comment-admin {
+    padding: 30px;
+    background: #fafbfb;
+    border-radius: 10px;
+}
+
+.cmt-image {
+    margin-right: 15px;
+    display: inline-flex;
+}
+
+.cmt-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+.cmt-role {
+    margin-left: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #1e78ce;
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 7px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+.cmt-actions a.fav-cmt.like {
+    color: #1e78ce;
 }
