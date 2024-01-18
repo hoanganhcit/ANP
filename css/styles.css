@@ -451,6 +451,7 @@ section.content-layout {
     font-family: "Chakra Petch", sans-serif;
     font-weight: 700;
     font-style: normal;
+    border-left: 5px solid #0f62ac;
 }
 
 .sidebar-list {
