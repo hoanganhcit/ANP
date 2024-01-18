@@ -1264,6 +1264,9 @@ span.time-cmt {
 .cmt-actions a.fav-cmt.like {
     color: #1e78ce;
 }
+.slick-slide img {
+    width: 100%;
+}
 
 @media screen and (max-width: 600px) {
     
