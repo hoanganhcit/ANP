@@ -94,6 +94,9 @@
                             <div class="icon-categories">
                                 <img src="images/menu.png" alt="">
                             </div>
+                            <div class="icon-categories mobile-menu">
+                                <img src="images/menu.png" alt="">
+                            </div>
                             <div class="title-cate">
                                 <span>Danh Mục Sản Phẩm</span>
                             </div>
@@ -728,12 +731,8 @@
                 }
             });
             
-            $(window).resize(function() {
-                if (window.matchMedia('(max-width: 600px)').matches) {
-                    $('.icon-categories').click(function() {
-                        $('.menu-right').slideToggle();
-                    });
-                }
+            $('.mobile-menu').click(function() {
+                $('.menu-right').slideToggle();
             });
         });
     </script>
