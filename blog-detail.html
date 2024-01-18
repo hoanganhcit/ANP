@@ -600,16 +600,16 @@
                                     </div>
                                     <div class="d-grid gap-5 colume-2">
                                         <div class="input-group-1">
-                                            <label for="">Họ và tên <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-input">
+                                            <label for="fullname">Họ và tên <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-input" name="fullname" id="fullname">
                                         </div>
                                         <div class="input-group-1">
-                                            <label for="">Số điện thoại</label>
-                                            <input type="text" class="form-input">
+                                            <label for="phone">Số điện thoại</label>
+                                            <input type="text" class="form-input" name="phone" id="phone">
                                         </div>
                                         <div class="input-group-1">
-                                            <label for="">Email</label>
-                                            <input type="text" class="form-input">
+                                            <label for="email">Email</label>
+                                            <input type="text" class="form-input" name="email" id="email">
                                         </div>
                                         <div class="input-group-1">
                                             <button type="submit" class="button-submit">Gửi</button>
@@ -715,6 +715,19 @@
                 }
             });
 
+            $('.input-group-1 .form-input').on( "focus", function() {
+                $('.input-group-1').removeClass('focus');
+                $(this).parent().addClass('focus');
+            });
+            $('.input-group-1 .form-input').focusout(function() {
+                var text_val = $(this).val();
+                if (text_val === "") {
+                    $(this).parent().removeClass('has-value focus');
+                } else {
+                    $(this).parent().addClass('has-value');
+                }
+            });
+            
             $(window).resize(function() {
                 if (window.matchMedia('(max-width: 600px)').matches) {
                     $('.icon-categories').click(function() {

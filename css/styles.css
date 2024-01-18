@@ -1164,11 +1164,15 @@ section.content-layout {
 .input-group-1 label {
     position: absolute;
     color: #617483;
-    top: 6px;
+    top: 15px;
     left: 15px;
     font-weight: 500;
+    transition: .3s;
 }
-
+.input-group-1.focus label,
+.input-group-1.has-value label  {
+    top: 6px;
+}
 .button-submit {
     width: 100%;
     height: 50px;
