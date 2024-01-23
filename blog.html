@@ -454,25 +454,25 @@
                                         </div>
                                         <ul>
                                             <li>
-                                                <a href="#" class="title-sub-cate">Thủ thuật hay tuyển chọn</a>
+                                                <a href="#" class="title-sub-cate" data-maxlenght="25">Thủ thuật hay tuyển chọn lắm đấy</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="title-sub-cate">Oppo</a>
+                                                <a href="#" class="title-sub-cate" data-maxlenght="25">Oppo</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="title-sub-cate">Realme</a>
+                                                <a href="#" class="title-sub-cate" data-maxlenght="25">Realme</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="title-sub-cate">Google Pixel</a>
+                                                <a href="#" class="title-sub-cate" data-maxlenght="25">Google Pixel</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="title-sub-cate">Asus</a>
+                                                <a href="#" class="title-sub-cate" data-maxlenght="25">Asus</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="title-sub-cate">Xiaomi</a>
+                                                <a href="#" class="title-sub-cate" data-maxlenght="25">Xiaomi</a>
                                             </li>
                                             <li>
-                                                <a href="#" class="title-sub-cate">Huawei</a>
+                                                <a href="#" class="title-sub-cate" data-maxlenght="25">Huawei</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -910,7 +910,7 @@
             </div>
         </section>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
     <script>
         $(document).ready(function () {
@@ -923,7 +923,12 @@
             });
 
             $(".title-sub-cate").text(function(index, currentText) {
-                return currentText.substr(0, 25) + "...";
+                var maxLength = $(this).attr('data-maxlenght');
+                if(currentText.length >= maxLength) {
+                    return currentText.substr(0, maxLength) + "...";
+                } else {
+                    return currentText
+                } 
             });
 
             
