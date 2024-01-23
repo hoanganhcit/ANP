@@ -19,6 +19,62 @@
             <img src="images/banner.png" alt="">
         </div>
         <header>
+            <div class="header-mobile"> 
+                <div class="menu-right-mobile-sidebar">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#">Xây Dựng cấu hình</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Blog thủ thuật hay</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">bảng giá tất cả SP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Catalogue Hikvision</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Báo giá lắp Camera</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="text-yellow-3">bảo hành online</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-mobile-menu">
+                    <button class="menu-mobile-bars">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="header-logo">
+                        <a href="#">
+                            <img src="images/logo.png" alt="" >
+                        </a>
+                    </div>
+                    <div class="anp-cart">
+                        <a href="#" class="d-block">
+                            <div class="btn-header">
+                                <div class="btn-header-icon">
+                                    <img src="images/header-cart.png" alt="">
+                                </div>
+                                <div class="bagde-number">
+                                    <div class="number-cart">0</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="header-search">
+                    <div class="search-box">
+                        <input type="text" class="form-input" placeholder="Bạn cần tìm gì?">
+                        <button type="button" class="search-btn-icon">
+                            <img src="images/search.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            
             <div class="header-hero">
                 <div class="container">
                     <div class="header-section">
@@ -133,6 +189,12 @@
                     <aside class="sidebar">
                         <div class="sidebar-inner">
                             <h2 class="title-sidebar">Chủ đề nổi bật</h2>
+                            <div class="mb-button-cate">
+                                <button class="less-menu-cate">
+                                    <i class="fal fa-bars"></i>
+                                    <span>Chủ đề nổi bật</span>
+                                </button>
+                            </div>
                             <ul class="sidebar-list">
                                 <li class="sidebar-item item-parent">
                                     <a href="#" class="sidebar-link">
@@ -189,12 +251,6 @@
                                     </a>
                                     <ul class="sub-menu sidebar-menu-droppdown">
                                         <li class="sidebar-item">
-                                            <a href="#" class="sidebar-link">Sản phẩm mới - Phiên bản mới</a>
-                                        </li>
-                                        <li class="sidebar-item">
-                                            <a href="#" class="sidebar-link">Lỗi thường gặp</a>
-                                        </li>
-                                        <li class="sidebar-item">
                                             <a href="#" class="sidebar-link">Tư vấn chọn mua</a>
                                         </li>
                                     </ul>
@@ -208,13 +264,10 @@
                                     </a>
                                     <ul class="sub-menu sidebar-menu-droppdown">
                                         <li class="sidebar-item">
-                                            <a href="#" class="sidebar-link">Sản phẩm mới - Phiên bản mới</a>
+                                            <a href="#" class="sidebar-link">Sản phẩm mới - Phiên bản mới </a>
                                         </li>
                                         <li class="sidebar-item">
                                             <a href="#" class="sidebar-link">Lỗi thường gặp</a>
-                                        </li>
-                                        <li class="sidebar-item">
-                                            <a href="#" class="sidebar-link">Tư vấn chọn mua</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -226,9 +279,6 @@
                                         <div class="text-link">Phụ kiện và sản phẩm khác</div>
                                     </a>
                                     <ul class="sub-menu sidebar-menu-droppdown">
-                                        <li class="sidebar-item">
-                                            <a href="#" class="sidebar-link">Sản phẩm mới - Phiên bản mới</a>
-                                        </li>
                                         <li class="sidebar-item">
                                             <a href="#" class="sidebar-link">Lỗi thường gặp</a>
                                         </li>
@@ -741,7 +791,9 @@
                 return currentText.substr(0, 40) + "...";
             });
 
-            
+            $('.menu-mobile-bars').click(function() {
+                $('.menu-right-mobile-sidebar').toggleClass('open');
+            });
 
 
             $('#top_software').slick({
@@ -768,6 +820,8 @@
             });
             
             $('.item-parent .sidebar-link').click(function () {
+                $('.sidebar-link').removeClass('active');
+                $(this).addClass('active');
                 var $ul = $(this).siblings('ul');
                 if ($ul.length > 0) {
                     $ul.slideToggle(600);
