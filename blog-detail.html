@@ -467,25 +467,25 @@
                                         </div>
                                         <ul>
                                             <li>
-                                                <a href="#">Thủ thuật hay tuyển chọn</a>
+                                                <a href="#" class="title-sub-cate">Thủ thuật hay tuyển chọn</a>
                                             </li>
                                             <li>
-                                                <a href="#">Oppo</a>
+                                                <a href="#" class="title-sub-cate">Oppo</a>
                                             </li>
                                             <li>
-                                                <a href="#">Realme</a>
+                                                <a href="#" class="title-sub-cate">Realme</a>
                                             </li>
                                             <li>
-                                                <a href="#">Google Pixel</a>
+                                                <a href="#" class="title-sub-cate">Google Pixel</a>
                                             </li>
                                             <li>
-                                                <a href="#">Asus</a>
+                                                <a href="#" class="title-sub-cate">Asus</a>
                                             </li>
                                             <li>
-                                                <a href="#">Xiaomi</a>
+                                                <a href="#" class="title-sub-cate">Xiaomi</a>
                                             </li>
                                             <li>
-                                                <a href="#">Huawei</a>
+                                                <a href="#" class="title-sub-cate">Huawei</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -1139,6 +1139,10 @@
             } else {
                 $('.categories-mb-aside').remove();
             }
+
+            $(".title-sub-cate").text(function(index, currentText) {
+                return currentText.substr(0, 25) + "...";
+            });
 
         });
     </script>

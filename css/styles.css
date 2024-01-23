@@ -1940,8 +1940,9 @@ span.time-cmt {
         border: 1px solid #eee;
         color: #454545;
         width: 100%;
-        padding: 10px;
         border-radius: 4px;
+        height: 50px;
+        padding: 5px 10px;
     }
     .data-title-cate {
         width: 100%;
