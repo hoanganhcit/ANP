@@ -672,10 +672,6 @@ section.content-layout {
 .title-article.active {
     color: #0f62ac;
 }
-.related-posts-tab ul li:last-child .title-article {
-    border-left: 0;
-    padding-left: 0;
-}
 /* .title-article:before {
     content: "";
     position: absolute;
@@ -2041,7 +2037,7 @@ legend {
     }
 
     .title-article {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .category-sidebar-menu {
