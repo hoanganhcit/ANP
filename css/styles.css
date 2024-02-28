@@ -2406,4 +2406,12 @@ ul.networksocial {
     .list_all a {
         line-height: 25px;
     }
+    .footer-card {
+        padding-bottom: 15px;
+        border-bottom: 1px dashed #ccc;
+        margin-bottom: 15px;
+    }
+    .social {
+        margin-bottom: 0;
+    }
 }
